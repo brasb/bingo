@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1, h2 {
+    text-align: center;
+    }
+
+#jogos {
+    background-color: red;
+    width: 40%;
+    padding: 10px;
+}
+
+.jogo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+}
+
+.cartela table {
+    border-collapse: collapse;
+}
+.cartela table tr td {
+    text-align: center;
+    border: solid 1px black;
+}
