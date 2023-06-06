@@ -1,3 +1,5 @@
+// Mínimo 24 número sorteados, intervalo 1s
+
 const PREFIXO_CLASSE_CONTAINER = "linha_";
 
 // Sorteados é a lista de números que já foram sorteados, para evitar repetição.
