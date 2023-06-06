@@ -5,12 +5,15 @@
 
 h1, h2 {
     text-align: center;
-    }
+}
 
 #jogos {
     background-color: red;
     width: 40%;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .jogo {
@@ -19,12 +22,23 @@ h1, h2 {
     justify-content: center;
     align-items: center;
     align-items: center;
+    width: 200px;
+    height: 270px;
+    background-color: orange;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .cartela table {
     border-collapse: collapse;
+    width: 200px;
+    height: 250px;
 }
 .cartela table tr td {
     text-align: center;
     border: solid 1px black;
+}
+
+.letra_titulo_cartela {
+    font-weight: bold;
 }
