@@ -3,36 +3,49 @@
     padding: 0px;
 }
 
+body {
+    background-color: #222222;
+}
+
 h1, h2 {
     text-align: center;
+    color: #eeeeee;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
 }
 
 #jogos {
     background-color: red;
-    width: 40%;
+    width: 640px;
     padding: 10px;
     display: flex;
+    flex-direction: column;
+}
+
+.linha_jogo {
+    display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
 }
 
 .jogo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
     width: 200px;
     height: 270px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     background-color: orange;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    text-align: center;
 }
 
 .cartela table {
     border-collapse: collapse;
     width: 200px;
     height: 250px;
+    background-color: purple;
 }
 .cartela table tr td {
     text-align: center;
@@ -41,4 +54,10 @@ h1, h2 {
 
 .letra_titulo_cartela {
     font-weight: bold;
+}
+
+#painel_resultados {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
 }

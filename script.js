@@ -1,14 +1,29 @@
+/*
+    Bingo:
+        * criação de tabelas;
+        * 25 números aleatórios;
+        *   * de 1 a 75;
+        *   * sem repetições;
+        *   * B: só de 1 a 15;
+        *   * I: só de 16 a 30;
+        *   * N: só de 31 a 45;
+        *   * G: só de 46 a 60;
+        *   * O: só de 61 a 75;
+        * sortear só um número por segundo e mostrá-lo na tela;
+        * marcar cartelas durante o sorteio;
+        * deverá ser indicado se um ou mais jogadores ganharem o jogo.
+*/
 // Mínimo 24 número sorteados, intervalo 1s
 
-const PREFIXO_CLASSE_CONTAINER = "linha_";
+const PREFIXO_ID_CONTAINER = "linha_";
 
 // Sorteados é a lista de números que já foram sorteados, para evitar repetição.
-function gerarNumero(sorteados)
+function gerarNumero(sorteados, min, max)
 {
     // Fica sorteando até encontrar um número único.
     let n = -1;
     while (n === -1 || sorteados.includes(n)) {
-        n = Math.ceil(Math.random() * 90.0);
+        n = Math.ceil(Math.random() * (max - min) + min);
     }
     
     return n;
@@ -44,26 +59,41 @@ function retornarContainerTabela(divPai, classe)
     return resultado;
 }
 
-function obterContainerDisponivel() // TODO: this.
+function criarContainer(divJogos, numeroId) {
+    let novoContainer = document.createElement("div");
+    novoContainer.setAttribute("class", "linha_jogo");
+    novoContainer.setAttribute("id", PREFIXO_ID_CONTAINER + numeroId);
+    divJogos.appendChild(novoContainer);
+    return novoContainer;
+}
+
+function obterContainerDisponivel() 
 {
     const JOGOS = document.getElementById("jogos");
 
-    let i = 0;    
-    if (divJogos.childElementCount === 0) {
-        return 0;
+    if (JOGOS.childElementCount === 0) {
+        return criarContainer(JOGOS, 0);
     }
     
-    let containerDisponivelEncontrado = false;
-    while (!containerDisponivelEncontrado) {
-        let nome = PREFIXO_CLASSE_CONTAINER + i;
-        let listaElementos = getElementsByClassName(nome);
-        let elemento = listaElementos == null ? null : listaElementos[0];
+    let container = null;
+    let i = 0;    
+    while (container === null) {
+        let id = PREFIXO_ID_CONTAINER + i;
+        let elemento = document.getElementById(id);
 
-        if (elemento.childElementCount)
-        
+        if (elemento === null) {
+            container = criarContainer(JOGOS, i);
+            break;
+        }
+
+        if (elemento.childElementCount < 3) {
+            container = elemento;
+        } 
 
         i++;
     }
+
+    return container;
 }
 
 function gerarCartela(nome)
@@ -102,7 +132,32 @@ function gerarCartela(nome)
                 td.innerText = PRIMEIRA_LINHA[j];
                 td.setAttribute("class", "letra_titulo_cartela");
             } else {
-                let sorteado = gerarNumero(numerosJaSorteados);
+                let min, max;
+
+                switch (j) {
+                    case 0:
+                        min = 1;
+                        max = 15;
+                        break;
+                    case 1:
+                        min = 16;
+                        max = 30;
+                        break;
+                    case 2:
+                        min = 31;
+                        max = 45;
+                        break;
+                    case 3:
+                        min = 46;
+                        max = 60;
+                        break;
+                    case 4:
+                        min = 61;
+                        max = 75;
+                        break;
+                }
+
+                let sorteado = gerarNumero(numerosJaSorteados, min, max);
                 numerosJaSorteados.push(sorteado);
                 td.innerText = formatarNumero(sorteado);
             }
@@ -117,3 +172,13 @@ function iniciarSorteio()
 {
 
 }
+
+gerarCartela("João");
+gerarCartela("Carlos");
+gerarCartela("Afonso");
+gerarCartela("Valéria");
+gerarCartela("Irineu");
+gerarCartela("Ambrósio");
+gerarCartela("Pedro");
+gerarCartela("Augustinho");
+gerarCartela("Inácio");
