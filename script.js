@@ -175,6 +175,13 @@ function iniciarSorteio()
 
 }
 
+function limparTabelas() {
+    let jogos = document.getElementById("jogos");
+    while (jogos.firstChild) {
+        document.removeChild(jogos.firstChild);
+    }
+}
+
 gerarCartela("João");
 gerarCartela("Carlos");
 gerarCartela("Afonso");
