@@ -123,7 +123,7 @@ function gerarCartela(nome)
 
     let numerosJaSorteados = [];
     const PRIMEIRA_LINHA = ["B", "I", "N", "G", "O"];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
         let tr = document.createElement("tr");
         for (let j = 0; j < 5; j++) {
             let td = document.createElement("td");
@@ -131,7 +131,7 @@ function gerarCartela(nome)
             if (i === 0) {
                 td.innerText = PRIMEIRA_LINHA[j];
                 td.setAttribute("class", "letra_titulo_cartela");
-            } else if (j === 2 && i === 2) {
+            } else if (j === 2 && i === 3) {
                 td.innerText = "X";
             } else {
                 let min, max;

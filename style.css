@@ -41,25 +41,28 @@ button {
     height: 270px;
     margin-right: 10px;
     margin-bottom: 10px;
-    background-color: orange;
+    background-color: yellow;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border: solid 2px #222222;
     text-align: center;
+}
+
+.letra_titulo_cartela {
+    font-weight: bold;
+    background-color: yellow;
 }
 
 .cartela table {
     border-collapse: collapse;
     width: 200px;
     height: 250px;
-    background-color: purple;
+    background-color: #eeeeee;
 }
 .cartela table tr td {
     text-align: center;
-    border: solid 1px black;
-}
-
-.letra_titulo_cartela {
-    font-weight: bold;
+    border-top: solid 2px #222222;
+    border-bottom: solid 2px #222222;
 }
 
 #painel_resultados {
