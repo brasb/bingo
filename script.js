@@ -86,7 +86,7 @@ function obterContainerDisponivel()
             break;
         }
 
-        if (elemento.childElementCount < 3) {
+        if (elemento.childElementCount < 4) {
             container = elemento;
         } 
 
@@ -131,6 +131,8 @@ function gerarCartela(nome)
             if (i === 0) {
                 td.innerText = PRIMEIRA_LINHA[j];
                 td.setAttribute("class", "letra_titulo_cartela");
+            } else if (j === 2 && i === 2) {
+                td.innerText = "X";
             } else {
                 let min, max;
 

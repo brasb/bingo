@@ -17,9 +17,15 @@ main {
     flex-direction: row;
 }
 
+button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20%;
+}
+
 #jogos {
     background-color: red;
-    width: 640px;
+    width: 850px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -58,6 +64,6 @@ main {
 
 #painel_resultados {
     width: 100%;
-    height: 100%;
+    height: 100px;
     background-color: aqua;
 }
