@@ -170,15 +170,43 @@ function gerarCartela(nome)
     }
 }
 
-function iniciarSorteio() 
+function formatarResultados(resultados)
 {
-
+    let texto = "";
+    for (let i = 0; i < resultados.length; i++) {
+        if (texto !== "") {
+            texto += ", ";
+            let linhas = texto.split("\n");
+            if (linhas[linhas.length - 1].length >= 80) {
+                texto += "\n";
+            }
+        }
+        texto += resultados[i];
+    }
+    texto += ".";
+    return texto;
 }
 
-function limparTabelas() {
+let sorteados = [];
+function atualizarSorteio()
+{
+    let n = gerarNumero(sorteados, 1, 75);
+    sorteados.push(n);
+
+    let containerResultados = document.getElementById("container_resultados");
+    containerResultados.innerText = formatarResultados(sorteados);
+}
+
+function iniciarSorteio() 
+{
+    setInterval(atualizarSorteio, 200);
+}
+
+function limparTabelas()
+{
     let jogos = document.getElementById("jogos");
-    while (jogos.firstChild) {
-        document.removeChild(jogos.firstChild);
+    while (jogos.firstChild !== null) {
+        jogos.firstChild.remove();
     }
 }
 

@@ -7,20 +7,26 @@ body {
     background-color: #222222;
 }
 
-h1, h2 {
+h1 {
     text-align: center;
     color: #eeeeee;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
+h2 {
+    text-align: center;
+    color: #111111;
+    padding-bottom: 10px;
 }
 
 button {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 20%;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
 }
 
 #jogos {
@@ -45,6 +51,7 @@ button {
     border-top-right-radius: 10px;
     border: solid 2px #222222;
     text-align: center;
+    color: #111111;
 }
 
 .letra_titulo_cartela {
@@ -62,10 +69,24 @@ button {
     text-align: center;
     border-top: solid 2px #222222;
     border-bottom: solid 2px #222222;
+    color: #111111;
 }
 
 #painel_resultados {
     width: 100%;
-    height: 100px;
-    background-color: aqua;
+    height: 200px;
+    margin-top: 65px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(238, 78, 38);
+}
+
+#container_resultados {
+    background-color: #eeeeee;
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    height: auto;
+    overflow-wrap: break-word;
+    text-align: center;
 }
