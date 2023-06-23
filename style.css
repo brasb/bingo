@@ -4,17 +4,18 @@
 }
 
 body {
-    background-color: #222222;
+    background-color: #EBFFFF;
 }
 
 h1 {
     text-align: center;
-    color: #eeeeee;
+    color: #111111;
+    font-size: 72px;
 }
 
 h2 {
     text-align: center;
-    color: #111111;
+    color: #FBFBFF;
     padding-bottom: 10px;
 }
 
@@ -46,7 +47,7 @@ main {
     height: 270px;
     margin-right: 10px;
     margin-bottom: 10px;
-    background-color: yellow;
+    background-color: #ff0033;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border: solid 2px #222222;
@@ -56,7 +57,7 @@ main {
 
 .letra_titulo_cartela {
     font-weight: bold;
-    background-color: yellow;
+    background-color: #ff0033;
 }
 
 .cartela table {
@@ -73,20 +74,26 @@ main {
 }
 
 #painel_resultados {
-    width: 100%;
+    width: 50%;
     height: 200px;
     margin-top: 65px;
     border-radius: 10px;
     padding: 10px;
-    background-color: rgb(238, 78, 38);
+    background-color: #4547B1;
 }
 
 #container_resultados {
     background-color: #eeeeee;
     width: 90%;
     border-radius: 10px;
+    padding: 15px;
     margin: auto;
     height: auto;
     overflow-wrap: break-word;
     text-align: center;
+}
+
+#botoes {
+    display: flex;
+    justify-content: space-evenly;
 }
