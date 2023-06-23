@@ -47,11 +47,13 @@ function adicionarCartela()
     }
 
     let nome = "";
-    while (nome === "") {
-        nome = prompt("Digite o nome do jogador:");
-        if (nome === "") {
-            alert("Não deixe o nome vazio!");
-        }
+    while ((nome = prompt("Insira o nome do jogador:")) === "") {
+        alert("Não deixe o nome vazio!");
+    }
+
+    // Caso o usuário tenha decidido cancelar.
+    if (nome === null) {
+        return;
     }
 
     gerarCartela(nome);
