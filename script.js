@@ -148,9 +148,10 @@ function gerarCartela(nome)
             if (i === 0) {
                 td.innerText = PRIMEIRA_LINHA[j];
                 td.setAttribute("class", "letra_titulo_cartela");
-            } else if (j === 2 && i === 3) {
+            } else if (j === 2 && i === 3) { // X no centro.
                 td.innerText = "X";
             } else {
+                // Valor mínimo e máximo do número que vai ser sorteado.
                 let min, max;
 
                 switch (j) {
@@ -201,7 +202,9 @@ function formatarNumerosSorteados(resultados) {
         }
         texto += resultados[i];
     }
+
     texto += ".";
+
     return texto;
 }
 
