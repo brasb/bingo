@@ -14,7 +14,7 @@ let primeiraVez = true;
 let quantidadeCartelas = 0;
 
 /*
-        Gera um número inteiro pseudoaleatoriamente.
+    Gera um número inteiro pseudoaleatoriamente.
 
     blacklist -> lista de números que não podem ser sorteados.
     min -> valor mínimo do número sorteado (inclusivo).
@@ -46,6 +46,7 @@ function adicionarCartela()
         return;
     }
 
+    // Pergunta o nome. Pergunta novamente se o usuário não inserir nenhum valor.
     let nome = "";
     while ((nome = prompt("Insira o nome do jogador:")) === "") {
         alert("Não deixe o nome vazio!");
@@ -77,6 +78,7 @@ function retornarContainerTabela(divPai, classe)
     return resultado;
 }
 
+// Cria um container para uma linha de cartelas.
 function criarContainer(divJogos, numeroId)
 {
     let novoContainer = document.createElement("div");
@@ -86,6 +88,7 @@ function criarContainer(divJogos, numeroId)
     return novoContainer;
 }
 
+// Tenta obter uma linha de cartelas com uma vaga. Se não houver nenhuma, cria uma nova.
 function obterContainerDisponivel()
 {
     const JOGOS = document.getElementById("jogos");
@@ -94,22 +97,16 @@ function obterContainerDisponivel()
         return criarContainer(JOGOS, 0);
     }
 
-    let container = null;
-    let i = 0;
-    while (container === null) {
+    let container;
+    for (let i = 0; container === undefined; i++) {
         let id = PREFIXO_ID_CONTAINER + i;
         let elemento = document.getElementById(id);
 
         if (elemento === null) {
             container = criarContainer(JOGOS, i);
-            break;
-        }
-
-        if (elemento.childElementCount < 4) {
+        } else if (elemento.childElementCount < 4) { // Uma linha é vaga se tiver menos do que 4 cartelas.
             container = elemento;
         }
-
-        i++;
     }
 
     return container;
